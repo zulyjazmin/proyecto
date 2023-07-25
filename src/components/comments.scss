@@ -1,0 +1,55 @@
+.container-comentarios{
+    margin: auto;
+    width: 1200px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    
+
+    .card-comentario{
+        
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        
+        box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.171);
+        
+
+        .container-google{
+            margin-top: 10px;
+            margin-right: 10px;
+            display: flex;
+
+           justify-content: right;
+           img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        }
+
+        p{
+            
+            margin-top: 50px;
+            margin-left: 15px;
+            width: 250px;
+            font-size: 20px;
+            color: #474b4e;
+            
+        }
+
+        span{
+            text-align: right;
+            margin-right: 20px;
+            color: #474b4e;
+            
+        }
+
+       
+
+    }
+    
+}

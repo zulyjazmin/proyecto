@@ -1,0 +1,80 @@
+
+.container-advertiser{ 
+    display: flex;
+    justify-content: center;
+.advertiser{
+    width: 1300px;
+    background-color: rgb(97, 205, 99);
+    display: flex;
+    justify-content: center;
+    .frase-advertiser{
+        display: flex;
+        flex-direction: column;
+
+        h1{
+            text-align: center;
+        color: white;
+        font-size: 60px;
+        font-family: 'Anton', sans-serif;
+        
+    }
+  .title-image{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .t-liquid{
+        text-align: left;
+        font-size: 40px;
+        margin-left: 40px;
+        color: rgb(22, 90, 185);
+        font-family: 'Comme', sans-serif;
+        }
+        .descuento{
+
+         width: 150px;
+         height: 150px;
+        }
+    }
+       
+    .ver-mas{
+        width: 750px ;
+    
+           button{
+            float: right;
+            margin-bottom: 20px;
+            width: 250px;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 30px;
+            background-color: white;
+            border:4px solid green ;
+            box-shadow: 0px 1px 10px rgba(4, 2, 2, 0.3);
+            
+            a{
+                text-decoration: none;
+                color: green;
+            }
+       
+
+
+        }
+
+        button:hover{
+            
+            color: green;
+            background-color:(170, 249, 189);
+            border: 7px solid rgb(14, 146, 7);
+        }
+    }
+}
+
+.primera-imagen{
+    transition: 2s;
+}
+.primera-imagen:hover{
+    transform: translateX(-30%);
+    filter: brightness(80%);
+    
+}
+}
+ }
