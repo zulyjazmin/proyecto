@@ -10,8 +10,8 @@ const Main = () => {
     return (
         <div>
           
-          <CardList />
-            <CardList2 />
+       {/*    <CardList />
+            <CardList2 /> */}
             <Categories />
             <SocialMedia />
             <Comments />

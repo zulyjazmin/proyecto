@@ -9,10 +9,6 @@ import Home from "./pages/Home"; */
 import MainLayout from "./layout/MainLayout";
 
 
-
-
-
-
 function App() {
   return (
     <div>

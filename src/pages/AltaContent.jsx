@@ -13,9 +13,15 @@ const AltaContent = () => {
     const [data, setData]= useState({})
         const cambioTexto =(id, val)=>
         {
-            console.log(id, ' => ', val);
-            setData({})
+            const cambio = { [id]: val }
+            const nuevoEstado = Object.assign({}, data, cambio)
+           
+            console.log(nuevoEstado);
+            
+            setData(nuevoEstado)
+
         }
+
     return (
     
   
@@ -33,7 +39,7 @@ const AltaContent = () => {
             <Select cambio={cambioTexto}  label='Categoría'/>
             <CheckBox2 cambio={cambioTexto}  label='Envío sin Cargo'/>
             <SubirImagen cambio={cambioTexto}  label='Subir Foto'/>
-            <FormButtonAlta cambio={cambioTexto}  data={data} />
+            <FormButtonAlta data={data} />
 
         </form>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Header from './Header';
 import NavBar from './NavBar';
 import Aside from './Aside';
@@ -6,21 +6,20 @@ import Main from './Main';
 import Footer from './Footer';
 import "./mainLayout.scss";
 import '../components/cards.scss';
-
-
-
+import { SearchProvider } from '../Search/SearchContext'; // Asegúrate de importar SearchProvider
 
 const MainLayout = () => {
   return (
-    <body>
-      
-     <Header />
-     <NavBar/>
-     <Aside />
-     <Main />
-     <Footer />
     
-    </body>
+      <SearchProvider>
+        <Header />
+        <NavBar />
+        <Aside />
+        <Main />
+      
+        <Footer />
+      </SearchProvider>
+    
   );
 };
 

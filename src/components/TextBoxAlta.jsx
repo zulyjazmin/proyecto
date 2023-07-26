@@ -16,13 +16,11 @@ const TextBoxAlta = ({ label, cambio}) => {
 
     return (
         <div className="datos">
-            <label htmlfor={
-            id
-            }>
+            <label htmlfor={id}>
                 {label}
-                <input type="text" name="nombre" required autofocus id={id} 
+                <input type="text" name="nombre"   id={id} 
                 value={value}
-                onInput={change} />
+                onChange={change} />
             </label>
 
         </div>

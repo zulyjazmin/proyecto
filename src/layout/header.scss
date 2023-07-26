@@ -12,6 +12,7 @@ header {
         width: 1500px;
         flex-wrap: wrap;
         justify-content: space-between;
+       
         
     .container-logo{ 
         
@@ -26,12 +27,13 @@ header {
         }
     }
         
-        .form-contenedor{
+        .search-bar{
            width: 800px;
            display: flex;
            flex-direction: row;
            align-items: center;
            justify-content: center;
+          
           
         label{
             margin-right: 10px;
@@ -39,6 +41,7 @@ header {
             font-weight: bold;
             font-size: 20px;
             font-family: 'Noto Sans', sans-serif;
+           
             
         }
 
@@ -48,7 +51,8 @@ header {
             height: 30px;
             border: 2px solid rgb(162, 219, 234);
             border-radius: 30px;
-            position: relative;       
+            position: relative;  
+                
         }
         input::placeholder {
             color:gray;
