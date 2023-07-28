@@ -1,6 +1,6 @@
 import React from 'react'
 import './creditCards.scss';
-import MostrarImagenes from './MostrarImagenes';
+
 
 const CreditCards = () => {
   return (

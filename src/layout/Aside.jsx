@@ -1,6 +1,6 @@
 import React from 'react'
 import './aside.scss';
-import MostrarImagenes from '../components/MostrarImagenes';
+
 
 const Aside = () => {
   return (

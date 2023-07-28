@@ -1,13 +1,15 @@
-import React from 'react'
-import './form-button-alta.scss';
+// FormButtonAlta.js
+import React from 'react';
+import { useFormContext } from '../contexts/FormContext';
 
-const FormButtonAlta = ({ data }) => (
-  <div className="boton">
-    <input  value="Enviar" onClick={(e) => console.log(data)} />
-     
-    
-  </div>
-)
+const FormButtonAlta = () => {
+  const { handleSubmit } = useFormContext();
 
+  return (
+    <div className="boton">
+      <input type="submit" value="Enviar" onClick={handleSubmit} />
+    </div>
+  );
+};
 
 export default FormButtonAlta;

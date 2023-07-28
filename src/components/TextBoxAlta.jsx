@@ -1,29 +1,26 @@
-import React from 'react'
-import { useState } from 'react';
+// TextBoxAlta.js
+import React from 'react';
+import { useFormContext } from '../contexts/FormContext';
 
+const TextBoxAlta = ({ label, name, required = true, autofocus = false }) => {
+  const { formState, errors, handleInputChange } = useFormContext();
 
-const TextBoxAlta = ({ label, cambio}) => {
+  return (
+    <div className="datos">
+      <label htmlFor={name}>
+        {label}
+        <input
+          type="text"
+          name={name}
+          value={formState[name]}
+          onChange={handleInputChange}
+          required={required}
+          autoFocus={autofocus}
+        />
+      </label>
+      {errors[name] && <p>{errors[name]}</p>}
+    </div>
+  );
+};
 
-    const [value, setValue] = useState('');
-    const id = label.replace( '','_').toLowerCase()
-
-    const change = (e) =>
-    {
-        const val = e.target.value
-        cambio(id, val)
-        setValue(val)
-    }
-
-    return (
-        <div className="datos">
-            <label htmlfor={id}>
-                {label}
-                <input type="text" name="nombre"   id={id} 
-                value={value}
-                onChange={change} />
-            </label>
-
-        </div>
-    )
-}
 export default TextBoxAlta;

@@ -1,51 +1,39 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { FormProvider } from '../contexts/FormContext';
 import TextBoxAlta from '../components/TextBoxAlta';
-import CheckBox from '../components/CheckBox';
+import Checkbox from '../components/CheckBox';
 import Select from '../components/Select';
-import CheckBox2 from '../components/CheckBox2';
-import SubirImagen from '../components/SubirImagen';
-import './alta.scss';
+import FileInput from '../components/FileInput';
 import FormButtonAlta from '../components/FormButtonAlta';
 
+const altaContent = () => {
+  const categories = [
+    { value: 'categoria', label: 'Categorías:' },
+    { value: 'hogar', label: 'Hogar' },
+    { value: 'electronica', label: 'Electrónica' },
+    { value: 'bicicletas', label: 'Bicicletas' },
+    { value: 'tv', label: 'TV' },
+    { value: 'celulares', label: 'Celulares' },
+  ];
 
-const AltaContent = () => {
-
-    const [data, setData]= useState({})
-        const cambioTexto =(id, val)=>
-        {
-            const cambio = { [id]: val }
-            const nuevoEstado = Object.assign({}, data, cambio)
-           
-            console.log(nuevoEstado);
-            
-            setData(nuevoEstado)
-
-        }
-
-    return (
-    
-  
-
-        <main className="alta-main"> 
-
-        <h1 className='alta-title'>Alta de productos</h1> 
-        <div className="container-formulario"> 
-        <form className='form-alta' action="codigo.php" method="post" enctype="multipart/form-data">
-            <TextBoxAlta cambio={cambioTexto} label='Nombre de Producto'/>
-            <TextBoxAlta cambio={cambioTexto}  label='Precio'/>
-            <CheckBox cambio={cambioTexto}  label='Stock'/>
-            <TextBoxAlta cambio={cambioTexto}  label='Descripción Corta'/>
-            <TextBoxAlta cambio={cambioTexto}  label='Descripción larga'/>
-            <Select cambio={cambioTexto}  label='Categoría'/>
-            <CheckBox2 cambio={cambioTexto}  label='Envío sin Cargo'/>
-            <SubirImagen cambio={cambioTexto}  label='Subir Foto'/>
-            <FormButtonAlta data={data} />
-
+  return (
+    <FormProvider>
+      <div className="container-formulario">
+        <form action="codigo.php" method="post" encType="multipart/form-data">
+          <TextBoxAlta label="Nombre de Producto" name="nombre" autofocus />
+          <TextBoxAlta label="Precio" name="precio" required />
+          <Checkbox label="Stock" name="stock" />
+          <TextBoxAlta label="Marca" name="marca" required />
+          <TextBoxAlta label="Descripción Corta" name="descripcionCorta" required />
+          <TextBoxAlta label="Descripción Larga" name="descripcionLarga" />
+          <Select label="Categoría" name="categoria" options={categories} />
+          <Checkbox label="Envío sin Cargo" name="envioSinCargo" />
+          <FileInput label="Subir Foto" name="subirImagen" />
+          <FormButtonAlta />
         </form>
-        </div>
-        </main>
-       
-    );
-}
+      </div>
+    </FormProvider>
+  );
+};
 
-export default AltaContent;
+export default altaContent;

@@ -1,17 +1,23 @@
-import React from 'react'
+// Checkbox.js
+import React from 'react';
+import { useFormContext } from '../contexts/FormContext';
 
-const CheckBox = () => {
+const Checkbox = ({ label, name }) => {
+  const { formState, handleInputChange } = useFormContext();
+
   return (
-    <div>
-      <div className="datos">
-                    <label for="">
-                        Stock
-                        <input type="checkbox" name="si" id="afirmativo" />si
-                        <input type="checkbox" name="no" id="negativo" />no
-                    </label>
-                </div>
+    <div className="datos">
+      <label htmlFor={name}>
+        {label}
+        <input
+          type="checkbox"
+          name={name}
+          checked={formState[name]}
+          onChange={handleInputChange}
+        />
+      </label>
     </div>
-  )
-}
+  );
+};
 
-export default CheckBox
+export default Checkbox;

@@ -1,28 +1,30 @@
-import React from 'react'
+// Select.js
+import React from 'react';
+import { useFormContext } from '../contexts/FormContext';
 
-const Select = () => {
+const Select = ({ label, name, options }) => {
+  const { formState, handleInputChange } = useFormContext();
+
   return (
-    <div>
-       
-       <div className="datos contenedor-l-s">
-                    <label for="">
-                        Categoría
-                    </label>
-                        <div className="container-select">
-                            <select class="select-box" >
-                                <option value="categorias">Categorías</option>
-                                <option value="hogar">Hogar</option>
-                                <option value="electronica">Electrónica</option>
-                                <option value="bicicletas">Bicicletas</option>
-                                <option value="tv">TV</option>
-                                <option value="celulares">Celulares</option>
-                              </select>
-
-                              <div class="icon-container"><i class="fa-solid fa-caret-down"></i></div>
-                        </div>
-                    
-                </div>
-
+    <div className="datos contenedor-l-s">
+      <label htmlFor={name}>{label}</label>
+      <div className="container-select">
+        <select
+          className="select-box"
+          name={name}
+          value={formState[name]}
+          onChange={handleInputChange}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <div className="icon-container">
+          <i className="fa-solid fa-caret-down"></i>
+        </div>
+      </div>
     </div>
   );
 };
