@@ -21,4 +21,4 @@ const useSearch = () => {
   return context;
 };
 
-export { SearchProvider, useSearch }; // Asegúrate de exportar correctamente SearchProvider y useSearch
+export { SearchProvider, useSearch }; 

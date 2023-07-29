@@ -1,6 +1,7 @@
 import React from 'react'
 import './nosotros.scss';
 
+
 const NosotrosContent = () => {
   return (
 

@@ -1,4 +1,4 @@
-// TextBoxAlta.js
+
 import React from 'react';
 import { useFormContext } from '../contexts/FormContext';
 
@@ -18,7 +18,7 @@ const TextBoxAlta = ({ label, name, required = true, autofocus = false }) => {
           autoFocus={autofocus}
         />
       </label>
-      {errors[name] && <p>{errors[name]}</p>}
+      {errors[name] && <p className='error'>{errors[name]}</p>}
     </div>
   );
 };

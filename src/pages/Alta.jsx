@@ -10,13 +10,16 @@ import { SearchProvider } from '../Search/SearchContext';
 const Alta = () => {
   return (
     <>
+    
       <SearchProvider>
         <Header />
       </SearchProvider>
       <NavBar />
-     
-        <AltaContent />
-  
+      
+    <main className="alta-main"> 
+    <h1 className='alta-title'>Alta de productos</h1>
+      <AltaContent />
+      </main>
       <Footer />
     </>
   );

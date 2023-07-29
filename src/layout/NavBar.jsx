@@ -2,7 +2,7 @@ import React from 'react';
 import './navBar.scss';
 
 const NavBar = () => {
-  // Función para determinar la clase "active" para los enlaces
+
   const isActiveLink = (link) => {
     return window.location.pathname === link ? 'active' : '';
   };

@@ -5,6 +5,7 @@ import Checkbox from '../components/CheckBox';
 import Select from '../components/Select';
 import FileInput from '../components/FileInput';
 import FormButtonAlta from '../components/FormButtonAlta';
+import './alta.scss';
 
 const altaContent = () => {
   const categories = [
@@ -19,7 +20,7 @@ const altaContent = () => {
   return (
     <FormProvider>
       <div className="container-formulario">
-        <form action="codigo.php" method="post" encType="multipart/form-data">
+        <form className='form-alta ' action="codigo.php" method="post" encType="multipart/form-data">
           <TextBoxAlta label="Nombre de Producto" name="nombre" autofocus />
           <TextBoxAlta label="Precio" name="precio" required />
           <Checkbox label="Stock" name="stock" />

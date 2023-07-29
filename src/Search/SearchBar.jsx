@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    // Aquí puedes realizar la acción de búsqueda si es necesario
+
   };
 
   return (

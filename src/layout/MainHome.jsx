@@ -9,9 +9,8 @@ import Categories from "../components/Categories";
 const Main = () => {
     return (
         <div>
-          
-       {/*    <CardList />
-            <CardList2 /> */}
+
+
             <Categories />
             <SocialMedia />
             <Comments />

@@ -6,7 +6,7 @@ import Main from './Main';
 import Footer from './Footer';
 import "./mainLayout.scss";
 import '../components/cards.scss';
-import { SearchProvider } from '../Search/SearchContext'; // Asegúrate de importar SearchProvider
+import { SearchProvider } from '../Search/SearchContext'; 
 
 const MainLayout = () => {
   return (

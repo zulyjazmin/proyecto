@@ -10,7 +10,7 @@ import { SearchProvider } from '../Search/SearchContext';
 
 const Nosotros = () => {
   return (
-    <div>
+    <>
        <SearchProvider> 
     <Header />
     </SearchProvider>
@@ -18,7 +18,7 @@ const Nosotros = () => {
     <NosotrosContent />
     <SocialMedia />
     <Footer />
-    </div>
+    </>
   )
 }
 

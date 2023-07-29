@@ -1,10 +1,10 @@
 import React from 'react';
 import './header.scss';
 import SearchBar from '../Search/SearchBar';
-import { useSearch } from '../Search/SearchContext'; // Asegúrate de importar useSearch
+
 
 const Header = () => {
-  const { searchTerm, setSearchTerm } = useSearch();
+
   return (
   
     <header>
