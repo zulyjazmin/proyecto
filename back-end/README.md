@@ -11,8 +11,7 @@ DEL LADO DEL BACK:
         dist/  ✅
 * Configura tu servidor: Crea un archivo de servidor en tu directorio backend (por ejemplo, server.js) y configura un servidor Express.js. Este servidor será responsable de recibir y procesar las solicitudes del frontend.✅
 * configurar dotenv ✅
-*  Define rutas: Define las rutas de tu API en el servidor Express.js para manejar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) relacionadas con los productos. Por ejemplo, puedes tener rutas como /api/productos para crear y listar productos.
-* Configura una base de datos: Si aún no lo has hecho, configura una base de datos para almacenar la información de los productos. Puedes utilizar una base de datos relacional (como MySQL o PostgreSQL) o una base de datos NoSQL (como MongoDB) según tus necesidades. 
+*  Define rutas: Define las rutas de tu API en el servidor Express.js para manejar las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) relacionadas con los productos. Por ejemplo, puedes tener rutas como /api/productos para crear y listar productos. !n de los productos. Puedes utilizar una base de datos relacional (como MySQL o PostgreSQL) o una base de datos NoSQL (como MongoDB) según tus necesidades. 
 * Crea controladores: Define controladores que manejen las solicitudes para crear, leer, actualizar y eliminar productos en la base de datos. Estos controladores procesarán la información del formulario y realizarán las operaciones correspondientes en la base de datos.
 * Conecta el backend a la base de datos: Configura la conexión entre tu servidor Express.js y la base de datos que hayas elegido. Utiliza una biblioteca de manejo de bases de datos como Mongoose (para MongoDB)
 
