@@ -1,24 +1,57 @@
-// controllers/altaController.js
-const Producto = require('../models/Producto');
+const Producto = require('../models/altaModelsProducto');
 
-// Controlador para crear un nuevo producto
-exports.crearProducto = async (req, res) => {
-  try {
-    const { nombre, precio } = req.body;
 
-    // Crea una nueva instancia del modelo Producto
-    const nuevoProducto = new Producto({
-      nombre,
-      precio,
-      // Agrega otros campos según tus necesidades
-    });
+const altaController = {
+  crearProducto: async (req, res) => {
+    try {
+      console.log('Datos del formulario:', req.body);
 
-    // Guarda el producto en la base de datos
-    await nuevoProducto.save();
+      // Obtener los datos del formulario desde la solicitud
+      const {
+        nombre,
+        precio,
+        stock,
+        marca,
+        descripcionCorta,
+        descripcionLarga,
+        categoria,
+        envioSinCargo,
+      } = req.body;
 
-    res.status(201).json({ message: 'Producto creado con éxito' });
-  } catch (error) {
-    console.error('Error al crear el producto:', error);
-    res.status(500).json({ message: 'Error al crear el producto' });
-  }
+      // Obtener la imagen cargada desde la solicitud
+      const imagen = req.file;
+
+      // Verificar si se ha cargado una imagen
+      if (!imagen) {
+        return res.status(400).json({ message: 'Debes subir una imagen' });
+      }
+
+
+      // Crear una nueva instancia del modelo Producto con la ubicación de la imagen
+      const nuevoProducto = new Producto({
+        nombre,
+        precio,
+        stock,
+        marca,
+        descripcionCorta,
+        descripcionLarga,
+        categoria,
+        envioSinCargo,
+        imagen: imageFileName,  // Almacenar la ubicación de la imagen en la base de datos
+      });
+
+      // Guardar el producto en la base de datos
+      const resultado = await nuevoProducto.save();
+      console.log('Datos guardados en la base de datos:', resultado);
+
+      // Responder con éxito
+      res.status(201).json({ message: 'Producto creado con éxito', producto: resultado });
+    } catch (error) {
+      // Manejo de errores
+      console.error('Error al crear el producto:', error);
+      res.status(500).json({ message: 'Error al crear el producto', error: error.message });
+    }
+  },
 };
+
+module.exports = altaController;

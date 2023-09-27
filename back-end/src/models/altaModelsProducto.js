@@ -9,7 +9,9 @@ const productoSchema = new mongoose.Schema({
   descripcionLarga: String,
   categoria: String,
   envioSinCargo: Boolean,
-  // Otros campos que desees almacenar...
+  imagen: String, // Almacena la ubicación de la imagen en el sistema de archivos
 }, { collection: 'altaProductos' });
 
-module.exports = mongoose.model('Producto', productoSchema);
+const altaModelsProducto = mongoose.model('Producto', productoSchema);
+
+module.exports = altaModelsProducto;
