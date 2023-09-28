@@ -1,4 +1,3 @@
-const Producto = require('../models/altaModelsProducto');
 
 
 const altaController = {
@@ -6,46 +5,30 @@ const altaController = {
     try {
       console.log('Datos del formulario:', req.body);
 
-      // Obtener los datos del formulario desde la solicitud
-      const {
-        nombre,
-        precio,
-        stock,
-        marca,
-        descripcionCorta,
-        descripcionLarga,
-        categoria,
-        envioSinCargo,
-      } = req.body;
-
-      // Obtener la imagen cargada desde la solicitud
-      const imagen = req.file;
-
       // Verificar si se ha cargado una imagen
-      if (!imagen) {
+      if (!req.file) {
         return res.status(400).json({ message: 'Debes subir una imagen' });
       }
 
+      // Obtener la ubicación de la imagen cargada desde la solicitud
+      const imagenLocation = `images/${req.file.originalname}`;
 
-      // Crear una nueva instancia del modelo Producto con la ubicación de la imagen
-      const nuevoProducto = new Producto({
-        nombre,
-        precio,
-        stock,
-        marca,
-        descripcionCorta,
-        descripcionLarga,
-        categoria,
-        envioSinCargo,
-        imagen: imageFileName,  // Almacenar la ubicación de la imagen en la base de datos
+      // Copiar el archivo al sistema de archivos en la ubicación deseada
+      fs.copyFile(req.file.path, imagenLocation, (err) => {
+        if (err) {
+          console.error('Error al copiar el archivo:', err);
+          res.status(500).json({ error: 'Error al copiar el archivo' });
+        } else {
+          console.log('Archivo copiado con éxito');
+          // Resto del código para crear el producto
+          // ...
+
+          console.log('Datos guardados en la base de datos:', resultado);
+
+          // Responder con éxito
+          res.status(201).json({ message: 'Producto creado con éxito', producto: resultado });
+        }
       });
-
-      // Guardar el producto en la base de datos
-      const resultado = await nuevoProducto.save();
-      console.log('Datos guardados en la base de datos:', resultado);
-
-      // Responder con éxito
-      res.status(201).json({ message: 'Producto creado con éxito', producto: resultado });
     } catch (error) {
       // Manejo de errores
       console.error('Error al crear el producto:', error);
