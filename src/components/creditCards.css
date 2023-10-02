@@ -1,0 +1,13 @@
+.tarjetas {
+  margin: auto;
+  width: 1200px;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tarjetas .tarjeta {
+  width: 80px;
+  height: 50px;
+}/*# sourceMappingURL=creditCards.css.map */
