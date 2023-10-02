@@ -1,4 +1,3 @@
-// FormContext.js
 import React, { createContext, useState, useContext } from 'react';
 
 const FormContext = createContext();
@@ -15,29 +14,30 @@ const FormProvider = ({ children }) => {
     descripcionLarga: '',
     categoria: 'categorias',
     envioSinCargo: false,
-    subirImagen: null,
+    imagen: null,
   });
 
   const [errors, setErrors] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formState.nombre.trim()) {
+    if (!formState.nombre.trim() && formSubmitted) {
       newErrors.nombre = 'Complete Nombre';
     }
 
-    if (!formState.precio.trim()) {
+    if (!formState.precio.trim() && formSubmitted) {
       newErrors.precio = 'Complete Precio';
-    } else if (isNaN(parseFloat(formState.precio))) {
+    } else if (isNaN(parseFloat(formState.precio)) && formSubmitted) {
       newErrors.precio = 'El Precio debe ser un número válido';
     }
 
-    if (!formState.marca.trim()) {
+    if (!formState.marca.trim() && formSubmitted) {
       newErrors.marca = 'Complete Marca';
     }
 
-    if (!formState.descripcionCorta.trim()) {
+    if (!formState.descripcionCorta.trim() && formSubmitted) {
       newErrors.descripcionCorta = 'Complete Descripción Corta';
     }
 
@@ -50,8 +50,8 @@ const FormProvider = ({ children }) => {
     const isFormValid = validateForm();
 
     if (isFormValid) {
+      setFormSubmitted(true);
       console.log('Form submitted successfully');
-      
     }
   };
 
@@ -66,7 +66,7 @@ const FormProvider = ({ children }) => {
   };
 
   return (
-    <FormContext.Provider value={{ formState, errors, handleInputChange, handleSubmit }}>
+    <FormContext.Provider value={{ formState, errors, handleInputChange, handleSubmit, formSubmitted, setFormSubmitted }}>
       {children}
     </FormContext.Provider>
   );

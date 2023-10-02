@@ -1,9 +1,26 @@
-
 import React from 'react';
 import { useFormContext } from '../contexts/FormContext';
 
-const TextBoxAlta = ({ label, name, required = true, autofocus = false }) => {
-  const { formState, errors, handleInputChange } = useFormContext();
+const TextBoxAlta = ({ label, name, required = true, autoFocus = false }) => {
+  const { formState, handleInputChange, errors, formSubmitted } = useFormContext();
+
+  const validateField = () => {
+    if (name === 'precio' && formState[name].trim() !== '') {
+      if (!isNaN(parseFloat(formState[name]))) {
+        return null;
+      } else {
+        return 'Por favor, Introduzca solo números';
+      }
+    }
+
+    if (required && !formState[name].trim() && formSubmitted) {
+      return `Complete ${label}`;
+    }
+
+    return null;
+  };
+
+  const fieldValidationMessage = errors[name] || validateField();
 
   return (
     <div className="datos">
@@ -15,10 +32,10 @@ const TextBoxAlta = ({ label, name, required = true, autofocus = false }) => {
           value={formState[name]}
           onChange={handleInputChange}
           required={required}
-          autoFocus={autofocus}
+          autoFocus={autoFocus}
         />
       </label>
-      {errors[name] && <p className='error'>{errors[name]}</p>}
+      {fieldValidationMessage && <p className='error'>{fieldValidationMessage}</p>}
     </div>
   );
 };

@@ -1,0 +1,38 @@
+.container-comentarios {
+  margin: auto;
+  width: 1200px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.container-comentarios .card-comentario {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.171);
+}
+.container-comentarios .card-comentario .container-google {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: right;
+}
+.container-comentarios .card-comentario .container-google img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.container-comentarios .card-comentario p {
+  margin-top: 50px;
+  margin-left: 15px;
+  width: 250px;
+  font-size: 20px;
+  color: #474b4e;
+}
+.container-comentarios .card-comentario span {
+  text-align: right;
+  margin-right: 20px;
+  color: #474b4e;
+}/*# sourceMappingURL=comments.css.map */

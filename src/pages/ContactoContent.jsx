@@ -33,7 +33,7 @@ const ContactoContent = () => {
         <div className="container-form-contacto">
           <h2>Escríbenos</h2>
 
-          <form className='contacto-form' action="codigo.php" id="formulario" method="post" onSubmit={handleSubmit}>
+          <form className='contacto-form'  id="formulario" method="post" onSubmit={handleSubmit}>
             <label htmlFor="nombre">Nombre</label>
             <input type="text" name="name" id="nombre" placeholder="Escribe tu Nombre Completo" />
 

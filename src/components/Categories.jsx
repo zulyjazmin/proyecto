@@ -5,7 +5,7 @@ const Categories = () => {
   return (
     <div>
        <h2 segundo-t>Categorías</h2>
-            <div className="container-categorias">
+            <div className="container-categorias" >
                 <div className="primer-categoria">
                     <div className="card-categorias"><i className="fa-solid fa-house"></i> <span>Hogar</span></div>
                     <div className="card-categorias"><i className="fa-solid fa-computer"></i><span> Computadoras</span></div>

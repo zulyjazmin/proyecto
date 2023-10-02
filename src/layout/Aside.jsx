@@ -9,7 +9,8 @@ const Aside = () => {
             <div className="container-advertiser">
                 <div className="advertiser">
                     <div className="frase-advertiser">
-                        <h1>DESCUENTOS INCREIBLES HASTA 28 DE JULIO</h1>
+                        <h1>DESCUENTOS INCREIBLES HASTA 
+                            3 DE OCTUBRE</h1>
                         <div className="title-image">
                             <img className="descuento" src={'/img/40-ciento-descuento-promocion_2227-148.avif'} alt="imagen de 40% en rojo" />
                             <h2 className="t-liquid">LIQUIDACION DE OTOÑO</h2>

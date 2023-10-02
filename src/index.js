@@ -7,6 +7,7 @@ import Alta from './pages/Alta';
 import Contacto from './pages/Contacto';
 import Nosotros from './pages/Nosotros';
 
+
 const router = createBrowserRouter([
   {
     path:'/',

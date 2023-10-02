@@ -1,9 +1,13 @@
-
 import React from 'react';
 import { useFormContext } from '../contexts/FormContext';
 
 const FileInput = ({ label, name }) => {
   const { handleInputChange } = useFormContext();
+
+  const handleChange = (e) => {
+    // Llama a handleInputChange y pasa el evento (e) como argumento
+    handleInputChange(e);
+  };
 
   return (
     <div className="datos dato-imagen">
@@ -14,10 +18,10 @@ const FileInput = ({ label, name }) => {
       <input
         className="i-archivo"
         type="file"
-        id={name}
-        name={name}
+        id={name} 
+        name={name}  
         accept="image/*"
-        onChange={handleInputChange}
+        onChange={handleChange}  
       />
     </div>
   );
