@@ -9,7 +9,7 @@ const altaRoutes = require('./routes/altaRoutes');
 
 const app = express();
 
-// Middleware para manejar JSON
+
 app.use(cors());
 app.use(express.json());
 
