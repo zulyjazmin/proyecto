@@ -1,0 +1,142 @@
+body{
+    width: 100%;
+    
+ }
+
+ .noso{
+    text-decoration: underline;
+ }
+ .main-nos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+
+    .nos-title{
+        margin-top: 50px;
+        background-color: white;
+        color: #0a458d;
+        font-size: 60px;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    .img-ppal{
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+        
+
+        img{
+            align-items: center;
+            margin: auto;
+            width: 50%;
+            height: 500px;
+            
+        }
+    }
+}
+.parrafo1{
+    margin: auto;
+    width: 900px;
+    margin-bottom: 60px;
+
+    p{
+        color: gray;
+        font-size: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+    }
+}
+
+.container{
+
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    background-image: url("../../public/img/azul.jpg");
+    height: 1910px;
+    padding-top: 60px;
+    margin-bottom: 30px;
+
+  .container-card{
+    width: 1100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .nos-t-p{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #c2d4e9;
+        width:430px ;
+        height: 240px;
+        
+        h2{
+            color: #0a458d;
+            text-align: start;
+            margin-bottom: 0;
+            width: 100%;
+            
+
+           
+        }
+        .puerta{
+            width: auto;
+            margin-left: 20px;
+    
+        }                                                                                                                             
+
+        p{
+            margin-top: 0;
+            color: #0a458d;
+            text-align: center;
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+            font-size: 14px;
+        }
+    }
+    
+
+
+
+  }
+    img{
+      width: 500px;
+      height: 280px;
+  
+    }
+  }
+
+  @media only screen and (max-width:1000px){
+
+    .main-nos {
+
+     .img-ppal{
+        img{
+            width: 500px;
+            height: 400px;
+        } 
+     }
+
+     .parrafo1{
+        width: 600px;
+
+     }
+    .container, .container-card{
+        transform: scale(0.8);
+    
+    }
+
+    .social-media{
+        width: 500px;
+    }
+    }
+  }
