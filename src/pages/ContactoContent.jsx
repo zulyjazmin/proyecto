@@ -2,12 +2,10 @@ import React from 'react';
 import './contacto.scss';
 import { useValidation } from '../contexts/ValidationContext';
 
-
-
 const ContactoContent = () => {
   const { nameError, phoneError, emailError, validateName, validatePhone, validateEmail } = useValidation();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const nameInput = e.target.elements.name.value;
     const phoneInput = e.target.elements.phone.value;
@@ -18,7 +16,32 @@ const ContactoContent = () => {
     const isEmailValid = validateEmail(emailInput);
 
     if (isNameValid && isPhoneValid && isEmailValid) {
-      console.log('Formulario enviado');
+      const formData = {
+        nombre: nameInput,
+        telefono: phoneInput,
+        email: emailInput,
+        mensaje: e.target.elements.mensaje.value,
+      };
+
+      try {
+        const response = await fetch('http://localhost:5000/contacto/crear', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.status === 201) {
+          console.log('Formulario enviado con éxito');
+        } else {
+          console.error('Error al enviar el formulario. Estado de respuesta:', response.status);
+          const responseData = await response.json();
+          console.error('Detalles del error:', responseData);
+        }
+      } catch (error) {
+        console.error('Error en la solicitud:', error);
+      }
     }
   };
 
@@ -33,23 +56,23 @@ const ContactoContent = () => {
         <div className="container-form-contacto">
           <h2>Escríbenos</h2>
 
-          <form className='contacto-form'  id="formulario" method="post" onSubmit={handleSubmit}>
-            <label htmlFor="nombre">Nombre</label>
-            <input type="text" name="name" id="nombre" placeholder="Escribe tu Nombre Completo" />
+          <form className='contacto-form' id="formulario" method="post" onSubmit={handleSubmit} encType="multipart/form-data">
+  <label htmlFor="name">Nombre</label>
+  <input type="text" name="nombre" id="name" placeholder="Escribe tu Nombre Completo" />
 
-            <label htmlFor="phone">Teléfono</label>
-            <input type="text" name="phone" id="telefono" placeholder="099949596" />
+  <label htmlFor="phone">Teléfono</label>
+  <input type="number" name="telefono" id="phone" placeholder="099949596" />
 
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" placeholder="liquishop@gmail.com" />
+  <label htmlFor="email">Email</label>
+  <input type="text" name="email" id="email" placeholder="liquishop@gmail.com" />
 
-            <label htmlFor="message">Deja tu Comentario</label>
-            <textarea name="mensaje" cols="30" rows="10" placeholder="Escribe tu Consulta"></textarea>
-            <input type="submit" value="Enviar" id="boton" className="check" />
-            {nameError && <p>{nameError}</p>}
-            {phoneError && <p>{phoneError}</p>}
-            {emailError && <p>{emailError}</p>}
-          </form>
+  <label htmlFor="message">Deja tu Comentario</label>
+  <textarea name="mensaje" cols="30" rows="10" placeholder="Escribe tu Consulta"></textarea>
+  <input type="submit" value="Enviar" id="boton" className="check" />
+  {nameError && <p>{nameError}</p>}
+  {phoneError && <p>{phoneError}</p>}
+  {emailError && <p>{emailError}</p>}
+</form>
         </div>
       </div>
 
