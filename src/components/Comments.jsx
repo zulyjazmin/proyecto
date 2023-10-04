@@ -1,6 +1,6 @@
 import React from 'react'
 import './comments.scss';
-import MostrarImagenes from './MostrarImagenes';
+
 
 const Comments = () => {
   return (

@@ -1,42 +1,53 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import ProductList2 from './ProductList2.json';
+import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 import './cards.scss';
-import { useSearch } from '../Search/SearchContext';
 
-const CardList2 = () => {
+const CardList = () => {
   const [products, setProducts] = useState([]);
-  const { searchTerm } = useSearch();
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/catalogo/productos', {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en la solicitud al servidor');
+      }
+
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = () => {
-      const data = ProductList2;
-      setProducts(data);
-    };
     fetchData();
   }, []);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
     <div className="card-container">
-      {filteredProducts.map((product) => (
-        <Cards
-          key={product.id}
-          imagen={product.imagen}
-          title={product.title}
-          description={product.description}
-          precioanterior={product.precioanterior}
-          precioactual={product.precioactual}
-        />
-      ))}
+      {error ? (
+        <p>Error al obtener productos desde el servidor: {error}</p>
+      ) : (
+        products.map((product) => (
+          <Cards
+            key={product._id}
+            imagen={product.imagen}
+            title={product.title}
+            description={product.description}
+            precioanterior={product.precioanterior}
+            precioactual={product.precioactual}
+          />
+        ))
+      )}
     </div>
   );
 };
 
-export default CardList2;
+export default CardList;

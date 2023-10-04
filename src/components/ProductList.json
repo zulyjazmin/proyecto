@@ -1,6 +1,6 @@
 [
     {    
-        "id": 1,
+       
         "imagen":"/img/productos/televisor-lg.jpg",
         "title":"Smart tv Lexa 40",
         "description":"FULL HD 2 Puertos USB y HDMI WIFI", 
@@ -9,7 +9,7 @@
        
     },
     {   
-        "id": 2,
+        
         "imagen":"/img/productos/apple-iphone-11-pro-max.jpg",
         "title":"Iphone 11 PRO",
         "description":"Con memoria 120GB",
@@ -18,7 +18,7 @@
        
     },
     {   
-        "id": 3,
+        
         "imagen":"/img/productos/apple-iphone-12.jpg",
         "title":"Iphone 12 PRO Max",
         "description":"Memoria de 200GB + vidrio templado",
@@ -27,7 +27,7 @@
        
     },
     {   
-        "id": 4,
+        
         "imagen":"/img/productos/auriculares-sony.jpg",
         "title":"Auriculares Sony",
         "description":"Potentes y de rápida carga",
@@ -36,7 +36,7 @@
        
     },
     {   
-        "id": 5,
+        
         "imagen":"/img/productos/camara-canon.jpg",
         "title":"Cámara Canon",
         "description":"Réflex Profecional Eos Rebel",
@@ -45,7 +45,7 @@
        
     },
     {   
-        "id": 6,
+       
         "imagen":"/img/productos/celular-samsung.jpg",
         "title":"Celular Samsung Galaxy A14",
         "description":"6.6 inch FHD + infinity V Display",
@@ -54,7 +54,7 @@
        
     },
     {   
-        "id": 7,
+        
         "imagen":"/img/productos/chromecast-google.jpg",
         "title":" Chromecast-google",
         "description":"Transmite desde tu teléfono a tu Tv",
@@ -64,7 +64,7 @@
     },
   
     {   
-        "id": 8,
+        
         "imagen":"/img/productos/dji-mavic-2-pro.jpg",
         "title":"DJI Mavic 2 PRO",
         "description":"Cámara de video 4K cardán de 3 ejes",
@@ -73,7 +73,7 @@
        
     },
     {   
-        "id": 9,
+        
         "imagen":"/img/productos/drone-dji.jpg",
         "title":"Drone DJI SE",
         "description":"Combo fly More 3 baterías",
@@ -83,7 +83,7 @@
     }
     ,
     {   
-        "id": 10,
+        
         "imagen":"/img/productos/google-nest-mini.jpg",
         "title":"Google nestt-mini",
         "description":"Asistente Virtual 110v/220v",
@@ -93,7 +93,7 @@
     }
     ,
     {   
-        "id": 11,
+        
         "imagen":"/img/productos/lavarropas-dh.jpg",
         "title":"Lavarropas DH",
         "description":"Capacidad 6k con 15 programas",
@@ -102,7 +102,7 @@
        
     },
     {   
-        "id": 12,
+       
         "imagen":"/img/productos/modem-motorola.jpg",
         "title":"Modem Motorola E5577 4G LTE1",
         "description":"SIM Portátil enrutador Mifi",
